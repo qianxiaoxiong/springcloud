@@ -1,0 +1,40 @@
+server:
+  port: 8083
+spring:
+  application:
+     name: user-service # 应用名称
+  datasource:
+    #driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.79.1:3306/heima
+    username: root
+    password: root
+
+#mybatis:
+#  type-aliases-package: com.leyou.userservice.pojo
+eureka:
+  client:
+    service-url: # EurekaServer地址
+      defaultZone: http://192.168.79.118:10086/eureka, http://192.168.79.119:10087/eureka
+
+logging:
+  level:
+    com.springboot: debug
+
+#这里可以选者负载均衡的规则    com.netflix.loadbalancer.RandomRule  com.netflix.loadbalancer.AvailabilityFilteringRule com.netflix.loadbalancer.BestAvailableRule
+#     com.netflix.loadbalancer.ClientConfigEnabledRoundRobinRule  com.netflix.loadbalancer.RoundRobinRule   com.netflix.loadbalancer.ZoneAvoidanceRule
+user-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    #熔断等级三：熔断失败
+hystrix:
+    command:
+        default:
+            execution:
+              isolation:
+                    thread:
+                        timeoutInMilliseconds: 2000  #默认1s, 如果一秒没有连接到服务，就超时，hystrix就会熔断降级
+#熔断等级二：熔断降级
+circuitBreaker:
+    requestVolumeThreshold: 10
+    sleepWindowInMilliseconds: 10000
+    errorThresholdPercentage: 50

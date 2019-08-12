@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FeignTest/FeignTest.iml" filepath="$PROJECT_DIR$/FeignTest/FeignTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZuulApplication/ZuulApplication.iml" filepath="$PROJECT_DIR$/ZuulApplication/ZuulApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurakaserver/eurakaserver.iml" filepath="$PROJECT_DIR$/eurakaserver/eurakaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud.iml" filepath="$PROJECT_DIR$/springcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/usersevice/usersevice.iml" filepath="$PROJECT_DIR$/usersevice/usersevice.iml" />
+    </modules>
+  </component>
+</project>

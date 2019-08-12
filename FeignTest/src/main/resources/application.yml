@@ -1,0 +1,30 @@
+#feign:
+#  hystrix:
+#    enabled: true  #feign中用hystrix 只不过需要手动开启server:server:server:
+server:
+  port: 9090
+spring:
+  application:
+    name: feign-service
+eureka:
+  client:
+    service-url: # EurekaServer地址
+      defaultZone: http://192.168.79.118:10086/eureka, http://192.168.79.119:10087/eureka
+#feign里面的ribbon所包含的连接超时等问题
+#ribbon:
+#  ReadTimeout: 3000
+#  ConnectTimeout: 2000
+#  MaxAutoRetries: 0
+#  MaxAutoRetriesNextServer: 0
+#  OkToRetryOnAllOperations: false
+
+feign:
+  compression:
+    request:
+      enabled: true #请求压缩   Gzip
+      mime-types: text/html,application/xml,application/json # 设置压缩的数据类型
+      min-request-size: 2048 # 设置触发压缩的大小下限
+    response:
+      enabled: true
+  level:
+    com.feigntest: debug

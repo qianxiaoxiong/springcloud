@@ -22,7 +22,7 @@
     <properties>
         <spring-cloud-version>Finchley.SR2</spring-cloud-version>
         <tk-mapper-version>2.0.3</tk-mapper-version>
-        <mysql.version>5.1.46</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
     </properties>
 
     <dependencyManagement>
